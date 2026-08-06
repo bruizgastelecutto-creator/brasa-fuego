@@ -16,7 +16,7 @@ const manrope = Manrope({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const siteUrl = "https://brasayfuego.vercel.app";
+const siteUrl = "https://brasa-fuego.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

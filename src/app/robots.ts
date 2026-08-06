@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://brasayfuego.vercel.app/sitemap.xml",
+    sitemap: "https://brasa-fuego.vercel.app/sitemap.xml",
   };
 }
