@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0908;
+  --background-alt: #131110;
+  --surface: #18140f;
+  --foreground: #f6f2ea;
+  --muted: #a89c8c;
+  --gold: #cba260;
+  --gold-light: #e6c98a;
+  --copper: #b4693a;
+  --ember: #e2712f;
+  --line: rgba(246, 242, 234, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-copper: var(--copper);
+  --color-ember: var(--ember);
+  --color-line: var(--line);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-manrope);
+  --animate-fade-up: fade-up 0.8s ease forwards;
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold);
+  color: #0a0908;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--copper);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, var(--gold-light), var(--copper) 60%, var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-eyebrow {
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--gold);
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
